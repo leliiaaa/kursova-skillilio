@@ -1,4 +1,3 @@
-/* Базові стилі (без змін) */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,28 +5,24 @@
 }
 
 body, html {
-    /* Важливо: тепер використовуємо height: 100vh, щоб вміст не виходив за межі екрана */
-    height: 100vh; 
-    overflow: hidden; /* Забороняємо прокручування сторінки */
-    background-color: #f8f7f5; 
+    height: 100vh;
+    background-color: #f8f7f5;
     font-family: Arial, sans-serif;
     color: #000;
 }
 
 .content-container {
-    height: 100%; /* Займає 100% висоти body */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 5vw; 
+    padding: 0 5vw;
     position: relative;
 }
 
-/* --- Хедер (логотип) --- */
 .header {
-    padding-top: 25px; /* Зменшено верхній відступ */
-    margin-bottom: 5px; 
+    padding-top: 25px;
+    margin-bottom: 5px;
 }
-/* ... (Стилі логотипа без змін) ... */
 .logo {
     display: flex;
     align-items: center;
@@ -38,74 +33,66 @@ body, html {
     letter-spacing: 2px;
 }
 
-.logo-icon {
-    width: 0;
-    height: 0;
-    margin-right: 10px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 15px solid #000;
+.logo-image {
+    height: 30px;
+    width: auto;
+    display: block;
 }
-
-/* --- Основний вміст (Hero) --- */
 
 .hero {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: flex-end; 
+    justify-content: center;
+    align-items: center;
     text-align: right;
-    padding-bottom: 60px; /* Зменшено нижній відступ */
-    padding-top: 10px; /* Додано невеликий верхній відступ */
+    padding-bottom: 60px;
+    padding-top: 10px;
 }
 
 .headline {
-    /* Зменшено розмір шрифту заголовка для екранів */
-    font-family: 'Arial Black', Impact, sans-serif; 
-    font-size: clamp(2.5rem, 8vw, 6rem); /* Розмір шрифту став меншим */
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
     line-height: 1;
     font-weight: 900;
     text-transform: uppercase;
     color: #000;
-    text-shadow: 2px 2px 0px #000, 
-                 -2px -2px 0px #000, 
-                 2px -2px 0px #000, 
+    text-shadow: 2px 2px 0px #000,
+                 -2px -2px 0px #000,
+                 2px -2px 0px #000,
                  -2px 2px 0px #000,
-                 3px 3px 0px #000; /* Трішки менша тінь */
-    margin-bottom: 15px; /* Зменшено відступ після заголовка */
+                 2px 2px 0px #000;
+    margin-bottom: 15px;
 }
 
 .cta-block {
-    margin-right: 20px; 
+    margin-right: 0; 
 }
 
 .subtitle {
-    font-size: 15px; /* Трішки менший шрифт підзаголовка */
+    font-size: 15px;
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
-/* ... (Стилі кнопок без змін) ... */
 .cta-buttons {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     gap: 10px;
     margin-top: 10px;
 }
 
 .btn {
-    padding: 8px 18px; /* Менші кнопки */
+    padding: 8px 18px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: all 0.3s ease;
-    font-size: 15px; /* Менший шрифт кнопок */
+    font-size: 15px;
     cursor: pointer;
 }
 
 .btn-primary {
-    background-color: #007bff; 
+    background-color: #007bff;
     color: white;
     border: 2px solid #007bff;
 }
@@ -126,49 +113,141 @@ body, html {
     color: #f8f7f5;
 }
 
-
-/* --- Футер --- */
 .footer {
-    position: absolute; 
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 15px 5vw; /* Значно зменшено вертикальний відступ */
+    padding: 15px 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #ccc;
-    background-color: #f8f7f5; 
+    background-color: #f8f7f5;
 }
 
 .footer-links {
     display: flex;
-    gap: 20px; /* Менша відстань між посиланнями */
+    gap: 20px;
 }
 
 .footer-links a {
     text-decoration: none;
     color: #000;
-    font-size: 13px; /* Менший шрифт посилань */
-    white-space: nowrap; 
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 .social-icons {
     display: flex;
-    gap: 15px; /* Відступ між іконками */
-    align-items: center; /* Вирівнювання по центру вертикально */
+    gap: 15px;
+    align-items: center;
 }
 
 .social-link {
-    text-decoration: none; /* Видаляємо підкреслення */
-    display: flex; /* Для центрування зображення всередині посилання, якщо потрібно */
+    text-decoration: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* СТИЛІ: задаємо розмір для зображень офіційних логотипів */
 .social-img {
-    height: 25px; /* Встановіть потрібну висоту для іконок (наприклад, 25px) */
-    width: auto; /* Автоматична ширина для збереження пропорцій */
-    display: block; /* Забезпечує коректне відображення розмірів */
+    height: 25px;
+    width: auto;
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.col {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 992px) {
+    .col-lg-1 { flex-basis: 8.33%; }
+    .col-lg-2 { flex-basis: 16.66%; }
+    .col-lg-3 { flex-basis: 25%; }
+    .col-lg-4 { flex-basis: 33.33%; }
+    .col-lg-5 { flex-basis: 41.66%; }
+    .col-lg-6 { flex-basis: 50%; }
+    .col-lg-7 { flex-basis: 58.33%; }
+    .col-lg-8 { flex-basis: 66.66%; }
+    .col-lg-9 { flex-basis: 75%; }
+    .col-lg-10 { flex-basis: 83.33%; }
+    .col-lg-11 { flex-basis: 91.66%; }
+    .col-lg-12 { flex-basis: 100%; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .col-md-1 { flex-basis: 8.33%; }
+    .col-md-2 { flex-basis: 16.66%; }
+    .col-md-3 { flex-basis: 25%; }
+    .col-md-4 { flex-basis: 33.33%; }
+    .col-md-5 { flex-basis: 41.66%; }
+    .col-md-6 { flex-basis: 50%; }
+    .col-md-7 { flex-basis: 58.33%; }
+    .col-md-8 { flex-basis: 66.66%; }
+    .col-md-9 { flex-basis: 75%; }
+    .col-md-10 { flex-basis: 83.33%; }
+    .col-md-11 { flex-basis: 91.66%; }
+    .col-md-12 { flex-basis: 100%; }
+}
+
+@media (max-width: 767.98px) {
+    .col-sm-1 { flex-basis: 8.33%; }
+    .col-sm-2 { flex-basis: 16.66%; }
+    .col-sm-3 { flex-basis: 25%; }
+    .col-sm-4 { flex-basis: 33.33%; }
+    .col-sm-5 { flex-basis: 41.66%; }
+    .col-sm-6 { flex-basis: 50%; }
+    .col-sm-7 { flex-basis: 58.33%; }
+    .col-sm-8 { flex-basis: 66.66%; }
+    .col-sm-9 { flex-basis: 75%; }
+    .col-sm-10 { flex-basis: 83.33%; }
+    .col-sm-11 { flex-basis: 91.66%; }
+    .col-sm-12 { flex-basis: 100%; }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        align-items: center;
+        text-align: center;
+    }
+
+    .headline {
+        font-size: 9.5vw;
+        line-height: 1.15;
+        text-shadow: none; 
+        margin-right: 0;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 48%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+        position: static;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
